@@ -1,0 +1,45 @@
+import requests
+import time
+from datetime import date
+from datetime import datetime
+
+# Set the day of your simulation (must be day in future)
+d = date(2023, 5, 4) #yyyy,mm,dd
+
+# Creates the needed UNIX timestamp
+unixtime = int(time.mktime(d.timetuple())) #+ 2*60*60 # UTC+2 = local time
+
+API_KEY = "AIzaSyAt6dbtLg3aDYNtttgvexjxQbGP3wwj9oU"
+payload={}
+headers = {}
+
+def main():
+    time_res = get_time_between("Lee Abbey London", "Imperial College London")
+    photo_res = get_photo()
+    print(res)
+
+def get_time_between(origin_addr, dest_addr):
+    url_12 = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origin_addr + "&destinations=" + dest_addr + "&mode=walking|transit&traffic_model=best_guess&departure_time=" + str(unixtime) + "&language=en-EN&sensor=false&key=" + API_KEY
+    url_21 = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + dest_addr + "&destinations=" + origin_addr + "&mode=walking|transit&traffic_model=best_guess&departure_time=" + str(unixtime) + "&language=en-EN&sensor=false&key=" + API_KEY
+
+    response12 = requests.request("GET", url_12, headers=headers, data=payload)
+    response21 = requests.request("GET", url_21, headers=headers, data=payload)
+    response12_value_secs = response12.json()['rows'][0]['elements'][0]['duration']['value']
+    response21_value_secs = response21.json()['rows'][0]['elements'][0]['duration']['value']
+    return (response12_value_secs + response21_value_secs) / 2 
+
+def get_coord(addr):
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + addr + "&key=" + API_KEY
+    response = requests.request("GET", url, headers=headers, data=payload)
+    loc = response.json()['results'][0]['geometry']['location']
+    coord = str(loc['lat']) + ", " + str(loc['lng'])
+    return coord
+
+def get_photo():
+    ref = "wqd"
+    url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=" + ref + "&key=" + API_KEY
+    resp = requests.request("GET", url, headers=headers, data=payload)
+    return resp
+
+
+main()
