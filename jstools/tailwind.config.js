@@ -5,9 +5,11 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
+      enabled: false, //true for production build
       content: [
           '../**/templates/*.html',
-          '../**/templates/**/*.html'
+          '../**/templates/**/*.html',
+          '../properties/templates/index.html'
       ]
   },
   theme: {
