@@ -47,11 +47,7 @@ class PropertyAPI:
                     p["bedrooms"], 
                     p["imgSrc"], 
                     p["price"], 
-                    Address(
-                        p["country"],
-                        p["state"],
-                        p["city"]
-                    )
+                    p["streetAddress"] + p["zipcode"]
                 )
             )
         
