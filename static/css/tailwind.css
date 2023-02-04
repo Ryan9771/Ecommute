@@ -3,3 +3,9 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.background-img {
+    background-image: url(../mapImg.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}

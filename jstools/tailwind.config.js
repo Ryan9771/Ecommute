@@ -13,7 +13,11 @@ module.exports = {
       ]
   },
   theme: {
-      extend: {},
+      extend: {
+        backgroundImage: {
+          'map': "url('../static/mapImg.jpg')"
+        }
+      },
   },
   variants: {},
   plugins: [],
