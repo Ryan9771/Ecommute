@@ -1,18 +1,5 @@
 import requests
 
-# url = "https://mashvisor-api.p.rapidapi.com/rental-rates"
-
-# querystring = {"state":"CA","source":"airbnb","city":"Los Angeles","zip_code":"90291"}
-
-# headers = {
-# 	"X-RapidAPI-Key": "99d643f4cemshd9cede2b5ccd5bep1ddab9jsne1d397ebcee0",
-# 	"X-RapidAPI-Host": "mashvisor-api.p.rapidapi.com"
-# }
-
-# response = requests.request("GET", url, headers=headers, params=querystring)
-
-# print(response.text)
-
 class Address:
     def __init__(self, state, city, zip_code):
         self.state = state
@@ -38,7 +25,6 @@ class PropertyAPI:
         print(response.text)
 
 if __name__ == "__main__":
-    max_price = 
     property = PropertyAPI()
 
     
