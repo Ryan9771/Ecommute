@@ -19,13 +19,16 @@ class PropertyAPI:
         self.url = "https://mashvisor-api.p.rapidapi.com/rental-rates"
 
     def call_req(self):
-
         querystring = {"state":self.address.state,"source":"airbnb","city":self.address.city,"zip_code":self.address.zip_code}
         response = requests.request("GET", self.url, headers=self.headers, params=querystring)
         print(response.text)
 
 if __name__ == "__main__":
-    property = PropertyAPI()
+    price = 1000
+    num_bedrooms = 2
+    address = Address("CA", "Los Angeles", "90291")
+    property = PropertyAPI(price, num_bedrooms, address)
+    property.call_req()
 
     
 
