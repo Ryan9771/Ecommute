@@ -9,7 +9,8 @@ module.exports = {
       content: [
           '../**/templates/*.html',
           '../**/templates/**/*.html',
-          '../properties/templates/index.html'
+          '../properties/templates/index.html',
+          '../properties/templates/results.html'
       ]
   },
   theme: {

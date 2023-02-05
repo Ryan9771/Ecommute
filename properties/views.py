@@ -14,3 +14,7 @@ def get_properties(request):
     # query = Property(price, num_bedrooms, location)
     # properties = query.call_req()
     return render(request, 'index.html')
+
+
+def return_results(request):
+    return render(request, 'results.html')

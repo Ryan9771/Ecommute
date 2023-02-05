@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" href="../../static/icon.png">
+    <title>Results</title>
+</head>
+
+<body class="w-full h-full bg-mapper p-4">
+
+    <a href="http://127.0.0.1:8000/properties/home/" target="_blank" class="rounded-full w-16 h-16 fixed top-4 left-6 bg-white flex justify-center items-center hover:scale-105 trans">
+        <img class="w-12 mt-1" src="../../static/icon.png" alt="">
+    </a>
+
+    <div class="rounded-xl border-white border-[5px] ml-[100px] h-full flex flex-wrap justify-center items-center first-letter:overflow-scroll p-4 pt-8">
+        
+        <div class="flex w-[550px] h-44 bg-white m-5 rounded-xl">
+            <div class="w-3/4 flex flex-col border-r-2 ">
+                <div class="w-full h-2/5 border-b-2 border-b-gray-300 flex items-center">
+                    <div class="w-4/5 h-full border-r-2 border-r-gray-300"></div>
+                    <div class="h-full w-1/5 flex flex-col">
+                        <div class="w-full h-1/2 border-b-2 border-b-gray-300">
+                            <div class="flex w-full h-full justify-center items-center">
+                                <svg class="w-7 h-7 mr-3 fill-mapper" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M32 32c17.7 0 32 14.3 32 32V320H288V160c0-17.7 14.3-32 32-32H544c53 0 96 43 96 96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V416H352 320 64v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V64C0 46.3 14.3 32 32 32zM176 288c-44.2 0-80-35.8-80-80s35.8-80 80-80s80 35.8 80 80s-35.8 80-80 80z"/></svg>
+                                <span>1</span> 
+                            </div>
+                        </div>
+                        <div class="w-full h-1/2"></div>
+                    </div>
+                </div>
+                <div class="w-full h-3/5"></div>
+            </div>
+            <div class="w-2/5 rounded-tr-xl overflow-hidden flex flex-col">
+                <img class="w-full rounded-tr-xl object-contain" src="../../static/clapped.jpeg" alt="">
+                <div class="flex justify-center items-center w-full h-full bg-mapper border-t-4 border-r-4 border-b-4 border-white rounded-br-xl">
+                    <span class="text-lg text-white tracking-wider font-semibold hover:scale-105 trans hover:font-bold">
+                        <img class="w-20" src="../../static/visit.png" alt="">
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+    
+</body>
+</html>
