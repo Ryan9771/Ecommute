@@ -13,5 +13,3 @@ def get_property_url(query):
     search = GoogleSearch(params)
     results = search.get_dict()
     return results["organic_results"][0]["link"]
-            
-get_property_url("5920 conley st")
