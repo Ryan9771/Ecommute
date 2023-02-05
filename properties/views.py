@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 
+from properties.property_url import get_property_url
+from django.template import loader
 from .property_api import Address, PropertyAPI
 from .google_api import compute_commute_times, Destination
 
@@ -27,14 +29,17 @@ def get_properties(request):
             continue
         data.append((proper, sum(commute_times)))
     data.sort(key=lambda x: x[1])
-    results = [
+    results = {"results": [
         {
             "address": proper.address,
             "price": proper.price,
             "num_bedrooms": proper.num_bedrooms,
             "num_bathrooms": proper.num_bathrooms,
             "img_src": proper.img_src,
+            "rent_link": get_property_url(proper.address),
             "total_commute_time": time
-        } for (proper, time) in data]
+        } for (proper, time) in data]}
 
     return HttpResponse(json.dumps(results), content_type="application/json")
+    # template = loader.get_template('properties/results.html')
+    # return HttpResponse(template.render(results, request))

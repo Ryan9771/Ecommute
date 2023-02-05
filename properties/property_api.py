@@ -51,8 +51,6 @@ class PropertyAPI:
                         p["streetAddress"].split("#")[0].split("APT")[0]
                     )       
             )
-        # for p in property_list:
-        #     print(f"bedrooms: {p.num_bedrooms}, bathrooms: {p.num_bathrooms}, img_src: {p.img_src}, price: {p.price}, address: {p.address}")
         return property_list
 
 
