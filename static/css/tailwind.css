@@ -12,10 +12,14 @@
 
 @layer components {
     .home-input-icon {
-        @apply w-6 h-6 mr-4 fill-blue-800;
+        @apply w-6 h-6 mr-4 fill-mapper;
     }
 
     .placeholder-text {
         @apply text-gray-400 font-bold text-xl tracking-wider;
+    }
+
+    .textfield-text {
+        @apply font-semibold tracking-wide text-xl;
     }
 }

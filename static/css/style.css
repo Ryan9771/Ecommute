@@ -551,7 +551,7 @@ video {
   margin-right: 1rem;
   height: 1.5rem;
   width: 1.5rem;
-  fill: #1e40af;
+  fill: #4E8D53;
 }
 
 .placeholder-text {
@@ -561,6 +561,13 @@ video {
   letter-spacing: 0.05em;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.textfield-text {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
 }
 
 .sr-only {
@@ -623,24 +630,20 @@ video {
   margin-top: 1rem;
 }
 
+.ml-12 {
+  margin-left: 3rem;
+}
+
 .mt-3 {
   margin-top: 0.75rem;
 }
 
-.ml-5 {
-  margin-left: 1.25rem;
+.ml-10 {
+  margin-left: 2.5rem;
 }
 
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.ml-\[73px\] {
-  margin-left: 73px;
+.ml-9 {
+  margin-left: 2.25rem;
 }
 
 .block {
@@ -687,16 +690,12 @@ video {
   height: 79px;
 }
 
-.h-9 {
-  height: 2.25rem;
+.h-20 {
+  height: 5rem;
 }
 
 .h-4 {
   height: 1rem;
-}
-
-.h-16 {
-  height: 4rem;
 }
 
 .w-full {
@@ -711,12 +710,12 @@ video {
   width: 50%;
 }
 
-.w-4 {
-  width: 1rem;
-}
-
 .w-3\/4 {
   width: 75%;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .border-collapse {
@@ -822,10 +821,6 @@ video {
   padding-right: 1rem;
 }
 
-.pl-4 {
-  padding-left: 1rem;
-}
-
 .pr-1 {
   padding-right: 0.25rem;
 }
@@ -870,6 +865,24 @@ video {
   background-image: url(../mapImg.jpg);
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+.placeholder\:placeholder-text::-moz-placeholder {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.placeholder\:placeholder-text::placeholder {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {
