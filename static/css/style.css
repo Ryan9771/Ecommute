@@ -1009,6 +1009,10 @@ video {
   padding-top: 2rem;
 }
 
+.pr-8 {
+  padding-right: 2rem;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
