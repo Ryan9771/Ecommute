@@ -35,16 +35,40 @@ def get_results(request):
             continue
         data.append((proper, commute_times))
     data.sort(key=lambda x: sum(x[1]))
-    results = {"results": [
-        {
-            "address": proper.address,
-            "price": proper.price,
-            "num_bedrooms": proper.num_bedrooms,
-            "num_bathrooms": proper.num_bathrooms,
-            "img_src": proper.img_src,
-            "rent_link": get_property_url(proper.address),
-            "commute_times": times
-        } for (proper, times) in data]}
+
+    def shorten_address(addr):
+        if len(addr) <= 30:
+            return addr
+        else:
+            return addr[:27] + "..."
+
+    def dest_pair_to_str(pair):
+        (dest_str, time) = pair
+        expected_str = form_res_str(dest_str, time)
+        overhang = len(expected_str) - 40
+        if overhang <= 0:
+            return expected_str
+        overhang += 3
+        dest_str = dest_str[:(len(dest_str) - overhang)]
+        dest_str += "..."
+        return form_res_str(dest_str, time)
+
+    def form_res_str(dest_str, time):
+        return dest_str + ", " + str(time) + " min"
+
+    results = {
+        "results": [
+            {
+                "address": shorten_address(proper.address.strip('\n').strip('\t')),
+                "price": proper.price,
+                "num_bedrooms": proper.num_bedrooms,
+                "num_bathrooms": proper.num_bathrooms,
+                "img_src": proper.img_src,
+                "rent_link": get_property_url(proper.address),
+                "commute_times": map(dest_pair_to_str, zip(map(lambda x: x[0], preferences), map(lambda x: x / 60, times)))
+            } for (proper, times) in data
+        ]
+    }
 
     return HttpResponse(json.dumps(results), content_type="application/json")
     # template = loader.get_template('results.html')
