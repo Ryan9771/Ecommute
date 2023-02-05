@@ -7,13 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>High Travels</title>
+    <link rel="icon" type="image/png" href="../../static/icon.png">
+    <title>Ecommute</title>
 </head>
 <body class="w-full h-full flex flex-col overflow-hidden">
 
     <img class="w-full h-[420px] object-cover" src="../../static/background.png" alt="">
     <div class=" h-96 w-full bg-mapper flex justify-center items-center">
-        <p class="mt-16 text-white text-5xl tracking-wide font-semibold">Ecommute</p>
+        <!-- <p class="mt-16 text-white text-5xl tracking-wide font-semibold">
+
+        </p> -->
+        <div class="mt-24 flex justify-center items-center bg-white p-4 px-6 rounded-xl border border-gray-400 scale-95 hover:scale-100 trans">
+            <svg class="w-7 h-7 mr-10 fill-mapping" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+            <img class="w-80 h-12" src="../../static/Logo.png" alt="logo">
+        </div>
+        
     </div>
 
 
@@ -78,6 +86,26 @@
             console.log(stringList);
         }
     })
+
+    function post(path, params, method='post') {
+        const form = document.createElement('form');
+        form.method = method;
+        form.action = path;
+
+        for (const key in params) {
+            if (params.hasOwnProperty(key)) {
+                const hiddenField = document.createElement('input');
+                hiddenField.type = 'hidden';
+                hiddenField.name = key;
+                hiddenField.value = params[key];
+
+                form.appendChild(hiddenField);
+            }
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+    }
 
 
 

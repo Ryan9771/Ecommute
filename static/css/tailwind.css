@@ -22,4 +22,8 @@
     .textfield-text {
         @apply font-semibold tracking-wide text-xl;
     }
+
+    .trans {
+        @apply transition duration-200;
+    }
 }
