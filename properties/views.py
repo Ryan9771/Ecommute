@@ -27,8 +27,8 @@ def get_properties(request):
         commute_times = [commute_time for (commute_time, commutable) in compute_commute_times(proper.address, destinations) if commute_time is not None]
         if len(commute_times) < len(destinations):
             continue
-        data.append((proper, sum(commute_times)))
-    data.sort(key=lambda x: x[1])
+        data.append((proper, commute_times))
+    data.sort(key=lambda x: sum(x[1]))
     results = {"results": [
         {
             "address": proper.address,
@@ -37,8 +37,8 @@ def get_properties(request):
             "num_bathrooms": proper.num_bathrooms,
             "img_src": proper.img_src,
             "rent_link": get_property_url(proper.address),
-            "total_commute_time": time
-        } for (proper, time) in data]}
+            "commute_times": times
+        } for (proper, times) in data]}
 
     return HttpResponse(json.dumps(results), content_type="application/json")
     # template = loader.get_template('properties/results.html')
