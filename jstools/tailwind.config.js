@@ -16,7 +16,10 @@ module.exports = {
       extend: {
         backgroundImage: {
           'map': "url('../static/mapImg.jpg')"
-        }
+        },
+        colors: {
+          'mapper': '#4E8D53'
+        },
       },
   },
   variants: {},
