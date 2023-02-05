@@ -19,7 +19,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('properties/', include('properties.urls')),
+    path('', include('properties.urls')),
 ]
 
 # To be able to add css
