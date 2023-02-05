@@ -5,5 +5,5 @@ from . import views
 #   in the main url config
 urlpatterns = [
     path('results/', views.get_results),
-    path('home/', views.get_index)
+    path('', views.get_index)
 ]
