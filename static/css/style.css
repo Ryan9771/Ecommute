@@ -659,6 +659,22 @@ video {
   margin-left: 53px;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
+.ml-\[70px\] {
+  margin-left: 70px;
+}
+
+.ml-\[72px\] {
+  margin-left: 72px;
+}
+
+.ml-\[73px\] {
+  margin-left: 73px;
+}
+
 .block {
   display: block;
 }
@@ -721,6 +737,10 @@ video {
 
 .h-8 {
   height: 2rem;
+}
+
+.h-9 {
+  height: 2.25rem;
 }
 
 .w-full {
