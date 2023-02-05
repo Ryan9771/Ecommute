@@ -25,7 +25,7 @@ class PropertyAPI:
         self.num_bedrooms = num_bedrooms
         self.address = address
         self.headers = {
-        	"X-RapidAPI-Key": "d7433b9c40msh7c596be0be9a1f5p1255c5jsnf95e85675013",
+        	"X-RapidAPI-Key": "77366811damsh37f04f773d624e4p1ddfe8jsnc7eab02830ae",
         	"X-RapidAPI-Host": "zillow56.p.rapidapi.com"
         }
         self.url = "https://zillow56.p.rapidapi.com/search"

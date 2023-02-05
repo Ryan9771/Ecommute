@@ -7,7 +7,7 @@ def get_property_url(query):
         "hl": "en",
         "gl": "us",
         "google_domain": "google.com",
-        "api_key": "5ed54fede8d17192ebfe631eb4d53cca4a5e562e98c06b812455df3540df7e2f"
+        "api_key": "bbf70494cda62e82aebf39b24f874fee54345f618de51bbf8a0d4fc7fe22d7fd"
     }
 
     search = GoogleSearch(params)
