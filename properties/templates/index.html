@@ -20,6 +20,24 @@
                     <span class="placeholder-text">City</span>
                 </div>
 
+                <div class="h-full w-full flex flex-col px-4 rounded-l-xl">
+                    <div class="w-full mt-4 flex justify-start">
+                        <svg class="home-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M302.8 312C334.9 271.9 408 174.6 408 120C408 53.7 354.3 0 288 0S168 53.7 168 120c0 54.6 73.1 151.9 105.2 192c7.7 9.6 22 9.6 29.6 0zM416 503l144.9-58c9.1-3.6 15.1-12.5 15.1-22.3V152c0-17-17.1-28.6-32.9-22.3l-116 46.4c-.5 1.2-1 2.5-1.5 3.7c-2.9 6.8-6.1 13.7-9.6 20.6V503zM15.1 187.3C6 191 0 199.8 0 209.6V480.4c0 17 17.1 28.6 32.9 22.3L160 451.8V200.4c-3.5-6.9-6.7-13.8-9.6-20.6c-5.6-13.2-10.4-27.4-12.8-41.5l-122.6 49zM384 255c-20.5 31.3-42.3 59.6-56.2 77c-20.5 25.6-59.1 25.6-79.6 0c-13.9-17.4-35.7-45.7-56.2-77V449.4l192 54.9V255z"/></svg>
+                        <span class="placeholder-text">Destinations</span>
+                    </div>
+                    <div id="search-field" class="mt-3 w-full pl-4 flex flex-col h-8">
+                        <div class="flex justify-start items-center w-full">
+                            <svg id="add" class="w-4 h-4" onclick="insert()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                            <div class="ml-2 w-full">
+                                <input class="ml-4 w-full focus:outline-none tracking-wide font-semibold" type="text" id="destinations-input" name="fname" placeholder="Enter a destination">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-3/4 h-16 overflow-scroll flex justify-start ml-[53px] pr-1 ">
+                        <ul class="text-xs" id='list'></ul>
+                    </div>
+                </div>
+
             </div>
             <div class="w-1/2 bg-white h-full flex flex-col rounded-r-xl">
                 <div class="h-full w-full border-b-2 border-b-gray-200 flex justify-start items-center px-4">
@@ -43,3 +61,29 @@
     </div>
 </body>
 </html>
+
+<script>
+
+    // function insert() {
+    //     document.getElementById("demo").innerHTML += `
+    //     <svg class="w-4 h-4" onclick="insert()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+    //     `
+
+    let stringList = []
+
+
+    document.getElementById("destinations-input").addEventListener("keyup", function(event) {
+        event.preventDefault();
+        var text = document.getElementById("destinations-input").value; 
+        if (event.keyCode === 13) {
+            var li = "<li>" + text + "</li>";
+            stringList.push(text)
+            document.getElementById("list").insertAdjacentHTML('afterbegin', li);
+            document.getElementById("destinations-input").value = ""; // clear the value
+            console.log(stringList);
+        }
+    })
+
+
+
+</script>
