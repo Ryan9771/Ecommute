@@ -3,3 +3,27 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.background-img {
+    background-image: url(../mapImg.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+@layer components {
+    .home-input-icon {
+        @apply w-6 h-6 mr-4 fill-mapper;
+    }
+
+    .placeholder-text {
+        @apply text-gray-400 font-bold text-xl tracking-wider;
+    }
+
+    .textfield-text {
+        @apply font-semibold tracking-wide text-xl;
+    }
+
+    .trans {
+        @apply transition duration-200;
+    }
+}

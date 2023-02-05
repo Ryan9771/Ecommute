@@ -7,11 +7,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Articles</title>
+    <link rel="icon" type="image/png" href="../../static/icon.png">
+    <title>Ecommute</title>
 </head>
-<body class="p-5 bg-green-700">
-    <h1 class="text-lg font-bold text-yellow-500">This is the initial tailwind working integration</h1> 
+<body class="w-full h-full flex flex-col overflow-hidden">
 
+    <img class="w-full h-[420px] object-cover" src="../../static/background.png" alt="">
+    <div class=" h-[410px] w-full bg-mapper flex justify-center items-center">
+        <!-- <p class="mt-16 text-white text-5xl tracking-wide font-semibold">
+
+        </p> -->
+        <div id="submit-btn" class="mt-24 flex justify-center items-center bg-white p-4 px-6 rounded-full border border-gray-400 scale-95 hover:scale-100 trans cursor-pointer">
+            <svg class="w-7 h-7 mr-10 fill-mapping" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+            <img class="w-80 h-12" src="../../static/Logo.png" alt="logo">
+        </div>
+        
     </div>
+
+
+    <div class="z-10 absolute top-40 mt-24 w-full flex justify-center items-center drop-shadow-2xl scale-125">
+        <div class="w-[300px] sm:w-[500px] md:w-[600px] h-60 rounded-xl flex border-2 border-gray-400">
+            <div class="w-1/2 bg-white h-full border-r-2 flex flex-col rounded-l-lg">
+                <div class="h-[79px] w-full border-b-2 border-b-gray-200 flex justify-start items-center px-4">
+                    <svg class="home-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M480 48c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48V96H224V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V96H112V24c0-13.3-10.7-24-24-24S64 10.7 64 24V96H48C21.5 96 0 117.5 0 144v96V464c0 26.5 21.5 48 48 48H304h32 96H592c26.5 0 48-21.5 48-48V240c0-26.5-21.5-48-48-48H480V48zm96 320v32c0 8.8-7.2 16-16 16H528c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16zM240 416H208c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16zM128 400c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32zM560 256c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H528c-8.8 0-16-7.2-16-16V272c0-8.8 7.2-16 16-16h32zM256 176v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16zM112 160c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h32zM256 304c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16V272c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32zM112 320H80c-8.8 0-16-7.2-16-16V272c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16zm304-48v32c0 8.8-7.2 16-16 16H368c-8.8 0-16-7.2-16-16V272c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16zM400 64c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H368c-8.8 0-16-7.2-16-16V80c0-8.8 7.2-16 16-16h32zm16 112v32c0 8.8-7.2 16-16 16H368c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16z"/></svg>
+                    <input id="city" class= "other-inputs w-full focus:outline-none textfield-text placeholder:placeholder-text" placeholder="City">
+                </div>
+
+                <div class="h-full w-full flex flex-col px-4 rounded-l-xl">
+                    <div class="w-full mt-4 flex justify-start items-center">
+                        <svg class="home-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M302.8 312C334.9 271.9 408 174.6 408 120C408 53.7 354.3 0 288 0S168 53.7 168 120c0 54.6 73.1 151.9 105.2 192c7.7 9.6 22 9.6 29.6 0zM416 503l144.9-58c9.1-3.6 15.1-12.5 15.1-22.3V152c0-17-17.1-28.6-32.9-22.3l-116 46.4c-.5 1.2-1 2.5-1.5 3.7c-2.9 6.8-6.1 13.7-9.6 20.6V503zM15.1 187.3C6 191 0 199.8 0 209.6V480.4c0 17 17.1 28.6 32.9 22.3L160 451.8V200.4c-3.5-6.9-6.7-13.8-9.6-20.6c-5.6-13.2-10.4-27.4-12.8-41.5l-122.6 49zM384 255c-20.5 31.3-42.3 59.6-56.2 77c-20.5 25.6-59.1 25.6-79.6 0c-13.9-17.4-35.7-45.7-56.2-77V449.4l192 54.9V255z"/></svg>
+                        <!-- <span class="placeholder-text">Destinations</span> -->
+                        <input class="w-full focus:outline-none textfield-text tracking-wide placeholder:placeholder-text" type="text" id="destinations-input" name="fname" placeholder="Destinations">
+                    </div>
+                    
+                    <div class="w-3/4 h-20 overflow-scroll flex justify-start ml-9 mt-3 pr-1 ">
+                        <ul class="text-xs" id='list'></ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w-1/2 bg-white h-full flex flex-col rounded-r-lg">
+                <div class="h-full w-full border-b-2 border-b-gray-200 flex justify-start items-center px-4">
+                    <svg class="home-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 0c17.7 0 32 14.3 32 32V67.7c1.6 .2 3.1 .4 4.7 .7c10.6 1.6 42.1 6.7 55.1 10c17.1 4.3 27.5 21.7 23.2 38.9s-21.7 27.5-38.9 23.2c-9.3-2.4-37.6-7-48.9-8.7c-32.1-4.8-59.6-2.4-78.5 4.9c-18.3 7-25.9 16.9-27.9 28c-1.9 10.7-.5 16.8 1.3 20.6c1.9 4 5.6 8.5 12.9 13.4c16.2 10.8 41.1 17.9 73.3 26.7l2.8 .8c28.4 7.7 63.2 17.2 89 34.3c14.1 9.4 27.3 22.1 35.5 39.7c8.3 17.8 10.1 37.8 6.3 59.1c-6.9 38-33.1 63.4-65.6 76.7c-13.7 5.6-28.6 9.2-44.4 11V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V445.1c-.4-.1-.9-.1-1.3-.2l-.2 0 0 0c-24.4-3.8-64.5-14.3-91.5-26.3c-16.2-7.2-23.4-26.1-16.2-42.2s26.1-23.4 42.2-16.2c20.9 9.3 55.3 18.4 75.2 21.6c31.9 4.7 58.2 2 76-5.3c16.9-6.9 24.6-16.9 26.8-28.9c1.9-10.7 .5-16.8-1.3-20.6c-1.9-4-5.6-8.5-12.9-13.4c-16.2-10.8-41.1-17.9-73.3-26.7l-2.8-.8c-28.4-7.7-63.2-17.2-89-34.3c-14.1-9.4-27.3-22.1-35.5-39.7c-8.3-17.8-10.1-37.8-6.3-59.1C25 114.1 53 89.3 86 76.7c13-5 27.2-8.2 42-10V32c0-17.7 14.3-32 32-32z"/></svg>
+                    <input id="price" class= "other-inputs w-full focus:outline-none textfield-text placeholder:placeholder-text" placeholder="Max Price?">
+                </div>
+                <div class="h-full w-full border-b-2 border-b-gray-200 flex justify-start items-center px-4">
+                    <svg class="home-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M32 32c17.7 0 32 14.3 32 32V320H288V160c0-17.7 14.3-32 32-32H544c53 0 96 43 96 96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V416H352 320 64v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V64C0 46.3 14.3 32 32 32zM176 288c-44.2 0-80-35.8-80-80s35.8-80 80-80s80 35.8 80 80s-35.8 80-80 80z"/></svg>
+                    <input id="bedrooms" class= "other-inputs w-full focus:outline-none textfield-text placeholder:placeholder-text" placeholder="Bedrooms?">
+                </div>
+                <div class="h-full w-full flex justify-start items-center px-4">
+                    <svg class="home-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 512C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256s-114.6 256-256 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>                   
+                    <input id="time" class= "other-inputs w-full focus:outline-none textfield-text placeholder:placeholder-text" placeholder="Travel Time?">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <form id="submit-btn-form" method="post">
+        {% csrf_token %}
+    </form>
 </body>
 </html>
+
+<script>
+
+    var destinationList = []
+
+    document.getElementById("destinations-input").addEventListener("keyup", function(event) {
+        event.preventDefault();
+        var text = document.getElementById("destinations-input").value; 
+        if (event.keyCode === 13) {
+            var li = "<li>" + text + "</li>";
+            destinationList.push("'" + text + "'") 
+            document.getElementById("list").insertAdjacentHTML('afterbegin', li);
+            document.getElementById("destinations-input").value = ""; // clear the value
+            console.log(stringList);
+        }
+    })
+
+    function post(path, params, method='post') {
+        const form = document.getElementById('submit-btn-form');
+        form.method = method;
+        form.action = path;
+        for (const key in params) {
+            if (params.hasOwnProperty(key)) {
+                const hiddenField = document.createElement('input');
+                hiddenField.type = 'hidden';
+                hiddenField.name = key;
+                hiddenField.value = params[key];
+
+                form.appendChild(hiddenField);
+            }
+        }
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    document.getElementById("submit-btn").addEventListener("click", function() {
+        for (let i = 0; i < destinationList.length; i++) {
+            destinationList[i] = "(" + destinationList[i] + "," + document.getElementById('time').value + ")"
+        }
+        let payload = {
+            'city': document.getElementById('city').value, 
+            'price': document.getElementById('price').value,
+            'num_bedrooms': document.getElementById('bedrooms').value,
+            'preferences': "[" + destinationList.join(",") + "]"
+        }
+        post("/properties/results/", payload)
+    })
+</script>

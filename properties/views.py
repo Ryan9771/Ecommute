@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import json
+import urllib.parse
 
 from properties.property_url import get_property_url
 from django.template import loader
@@ -11,13 +12,18 @@ MAX_PROPERTIES_TO_RETURN = 20
 
 # Create your views here.
 # Takes a request and returns a response (called request handler)
-def get_properties(request):
-    request_body = request.body.decode('utf-8')
-    body = json.loads(request_body)
-    price = body['price'] if 'price' in body else 250000
-    location = Address('USA', body['state'] if 'state' in body else 'ny', body['city'] if 'city' in body else 'new york')
-    num_bedrooms = body['num_bedrooms'] if 'num_bedrooms' in body else 1
-    preferences = eval(body['preferences']) if 'preferences' in body else []
+def get_results(request):
+    request_body = urllib.parse.unquote(request.body.decode('utf-8').replace("+", " "))
+    request_body_list = map(lambda x: x.split("="), request_body.split("&"))
+    request_body_dict = {}
+    for elem in request_body_list:
+        request_body_dict[elem[0]] = elem[1]
+    print(request_body_dict)
+    body = json.loads(json.dumps(request_body_dict))
+    price = body['price'] if body['price'] != '' else 250000
+    location = Address('USA', 'ny', body['city'] if body['city'] != '' else 'new york')
+    num_bedrooms = body['num_bedrooms'] if body['num_bedrooms'] != '' else 1
+    preferences = eval(body['preferences']) if body['preferences'] != '' else []
 
     query = PropertyAPI(price, num_bedrooms, location)
     properties = query.call_req()
@@ -41,5 +47,8 @@ def get_properties(request):
         } for (proper, times) in data]}
 
     return HttpResponse(json.dumps(results), content_type="application/json")
-    # template = loader.get_template('properties/results.html')
+    # template = loader.get_template('results.html')
     # return HttpResponse(template.render(results, request))
+
+def get_index(request):
+    return render(request, 'index.html')

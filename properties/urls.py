@@ -4,5 +4,6 @@ from . import views
 # URL Config -> Every app can have their own url config, but need to put it 
 #   in the main url config
 urlpatterns = [
-    path('get_properties', views.get_properties)
+    path('results/', views.get_results),
+    path('home/', views.get_index)
 ]
