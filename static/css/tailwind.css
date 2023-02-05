@@ -27,3 +27,18 @@
         @apply transition duration-200;
     }
 }
+
+::-webkit-scrollbar-track {
+    /* Change the background color */
+    background-color: #4E8D53;
+  }
+  
+  /* Select the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    /* Change the background color */
+    background-color: #4E8D53;
+  
+    /* Change the size of the thumb */
+    height: 30px;
+    width: 30px;
+  }

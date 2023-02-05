@@ -60,19 +60,19 @@ def get_results(request):
         "results": [
             {
                 "address": shorten_address(proper.address.strip('\n').strip('\t')),
-                "price": proper.price,
-                "num_bedrooms": proper.num_bedrooms,
-                "num_bathrooms": proper.num_bathrooms,
+                "price": "$" + str(proper.price),
+                "num_bedrooms": str(int(proper.num_bedrooms)),
+                "num_bathrooms": str(int(proper.num_bathrooms)),
                 "img_src": proper.img_src,
                 "rent_link": get_property_url(proper.address),
-                "commute_times": map(dest_pair_to_str, zip(map(lambda x: x[0], preferences), map(lambda x: x / 60, times)))
+                "commute_times": list(map(dest_pair_to_str, zip(map(lambda x: x[0], preferences), map(lambda x: round(x / 60), times))))
             } for (proper, times) in data
         ]
     }
 
-    return HttpResponse(json.dumps(results), content_type="application/json")
-    # template = loader.get_template('results.html')
-    # return HttpResponse(template.render(results, request))
+    # return HttpResponse(json.dumps(results), content_type="application/json")
+    template = loader.get_template('results.html')
+    return HttpResponse(template.render(results, request))
 
 def get_index(request):
     return render(request, 'index.html')
