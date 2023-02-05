@@ -9,3 +9,13 @@
     background-repeat: no-repeat;
     background-size: auto;
 }
+
+@layer components {
+    .home-input-icon {
+        @apply w-6 h-6 mr-4 fill-blue-800;
+    }
+
+    .placeholder-text {
+        @apply text-gray-400 font-bold text-xl tracking-wider;
+    }
+}
